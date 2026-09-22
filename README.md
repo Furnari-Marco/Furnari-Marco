@@ -32,12 +32,22 @@ What it demonstrates:
 
 The design decisions and their trade-offs are written up in [DECISIONS.md](https://github.com/Furnari-Marco/lms-wp-bridge/blob/main/DECISIONS.md).
 
+### [schema-driven-cms](https://github.com/Furnari-Marco/schema-driven-cms) — the core of a CMS engine for client sites
+
+Small businesses need a site they can edit without calling their developer and without being able to break it. This is the engine behind that: a site declares its shape once in a schema, and the admin forms, validation, storage, version history, translations and SEO output are all derived from that declaration. One engine, many sites.
+
+What it demonstrates:
+
+- **A content model that holds its shape.** One whitelist validator is the only way in: unknown keys dropped, types coerced, unsafe URLs and off-site images refused, documents bounded. It never throws — a client hitting Save on a bad form gets their field reverted, not a 500.
+- **Decisions that came from operating it.** Version history that refuses to merge nearby edits, because the person undoing is thinking in actions. Redirects created automatically when a client renames a page. Nothing indexable until someone ticks the box. Colours emitted as RGB channels so a palette change needs no rebuild.
+- **Translations that survive editing.** Stable keys derived from the schema, per-field fallback, and a deliberate refusal to machine-translate a client's legal text.
+- **130 tests and a strict typecheck with no test framework and no build step** — `node --test` runs the TypeScript directly. The only dependencies are TypeScript and `@types/node`, both dev-only.
+
+Its [DECISIONS.md](https://github.com/Furnari-Marco/schema-driven-cms/blob/main/DECISIONS.md) covers twenty of these trade-offs.
+
 ### Also in production
 
-Two further systems are being prepared for release as extracted core modules:
-
-- **A technical SEO audit platform** — Python, Flask, Playwright. Crawls at scale, parses DOMs, reconciles third-party API data and produces client-facing reports. In use on real audits.
-- **A headless CMS engine** — Next.js, file-based content, a code-free admin for non-technical clients. One engine, many sites: content, theme, blocks, translations and payments all editable by the client, behind a verification suite that has to pass before anything ships.
+- **A technical SEO audit platform** — Python, Flask, Playwright. Crawls at scale, parses DOMs, reconciles third-party API data and produces client-facing reports. In use on real audits; core modules being prepared for release.
 
 ---
 
