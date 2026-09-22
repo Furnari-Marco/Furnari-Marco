@@ -19,19 +19,6 @@ I've been on both sides of that seam. I've built the integrations, and I've been
 
 ## Selected work
 
-### [lms-wp-bridge](https://github.com/Furnari-Marco/lms-wp-bridge) — LMS ↔ WordPress bridge
-
-A WordPress plugin connecting a hosted LMS (Teachable-style) to a WordPress site: enrollments and sales mirrored through authenticated webhooks, single sign-on over HMAC-signed single-use links, lecture-level activity tracking, and behavioural detection of shared accounts and automated course downloads.
-
-What it demonstrates:
-
-- **A real threat model, not a checklist.** Signed redirects, single-use tokens, constant-time comparison, SSO that refuses to authenticate privileged accounts, and staged webhook enforcement so a live integration can be hardened with zero downtime.
-- **Detection that survives evasion.** Download tools now drive genuine, "undetected" browsers. The detectors combine signals those tools can't cheaply fake — trusted interaction counts, visible time, referrer presence, curriculum coverage per session — instead of trusting a client-side automation flag.
-- **Storage designed for years of history.** ~65 bytes per activity row, packed binary IPs, batched retention that never locks the table.
-- **90 tests** (77 PHP, 13 JavaScript). The PHP suite executes every SQL statement for real against SQLite rather than asserting on query strings — which is how it caught two non-portable constructs and a genuine bug in the tracking snippet.
-
-The design decisions and their trade-offs are written up in [DECISIONS.md](https://github.com/Furnari-Marco/lms-wp-bridge/blob/main/DECISIONS.md).
-
 ### [schema-driven-cms](https://github.com/Furnari-Marco/schema-driven-cms) — the core of a CMS engine for client sites
 
 Small businesses need a site they can edit without calling their developer and without being able to break it. This is the engine behind that: a site declares its shape once in a schema, and the admin forms, validation, storage, version history, translations and SEO output are all derived from that declaration. One engine, many sites.
@@ -55,6 +42,10 @@ What it demonstrates:
 - **A CSS cascade resolver, because the rule that hides text is never in the style attribute.** Selector chains, specificity, `!important`, inheritance — and a deliberate refusal to evaluate what it cannot evaluate reliably, reporting "unknown" instead of guessing.
 - **Judging a site against itself.** Keyword density and outbound link counts mean nothing in absolute terms; the site-wide pass computes the median across the crawl, so a directory site is not mistaken for a link scheme.
 - **139 tests** against HTML fixtures, running in under a second with no network access.
+
+### Not published as code
+
+The work I am asked about most is an integration between a hosted LMS and a WordPress site, in production: enrollments and sales mirrored through authenticated webhooks, single sign-on over signed short-lived links, and activity tracking across the two platforms. It belongs to the company it was built for, so there is no repository to link — happy to walk through the architecture and the trade-offs in a conversation.
 
 ---
 
