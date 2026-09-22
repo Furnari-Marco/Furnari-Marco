@@ -45,9 +45,16 @@ What it demonstrates:
 
 Its [DECISIONS.md](https://github.com/Furnari-Marco/schema-driven-cms/blob/main/DECISIONS.md) covers twenty of these trade-offs.
 
-### Also in production
+### [seo-audit-core](https://github.com/Furnari-Marco/seo-audit-core) — the analysis core of a technical SEO platform
 
-- **A technical SEO audit platform** — Python, Flask, Playwright. Crawls at scale, parses DOMs, reconciles third-party API data and produces client-facing reports. In use on real audits; core modules being prepared for release.
+From parsed HTML to findings a client can act on: SEO extraction, technical issue detection, black-hat SEO detection and crawl-over-crawl comparison. Pure Python, no network, no database, no framework — extracted from a platform in use on real audits.
+
+What it demonstrates:
+
+- **Treating false positives as the product risk.** An audit is worth paying for only if every line survives scrutiny; one wrong finding costs the credibility of the other forty. No finding rests on a single signal, and half the detection suite consists of ordinary markup — screen-reader labels, accordions, dropdowns, skip links, agency credits — that must produce nothing.
+- **A CSS cascade resolver, because the rule that hides text is never in the style attribute.** Selector chains, specificity, `!important`, inheritance — and a deliberate refusal to evaluate what it cannot evaluate reliably, reporting "unknown" instead of guessing.
+- **Judging a site against itself.** Keyword density and outbound link counts mean nothing in absolute terms; the site-wide pass computes the median across the crawl, so a directory site is not mistaken for a link scheme.
+- **139 tests** against HTML fixtures, running in under a second with no network access.
 
 ---
 
