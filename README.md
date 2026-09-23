@@ -43,9 +43,19 @@ What it demonstrates:
 - **Judging a site against itself.** Keyword density and outbound link counts mean nothing in absolute terms; the site-wide pass computes the median across the crawl, so a directory site is not mistaken for a link scheme.
 - **139 tests** against HTML fixtures, running in under a second with no network access.
 
-### Not published as code
+### [lms-wordpress-bridge](https://github.com/Furnari-Marco/lms-wordpress-bridge): identity and entitlements across two platforms
 
-The work I am asked about most is an integration between a hosted LMS and a WordPress site, in production: enrollments and sales mirrored through authenticated webhooks, single sign-on over signed short-lived links, and activity tracking across the two platforms. It belongs to the company it was built for, so there is no repository to link. I am happy to walk through the architecture and the trade-offs in a conversation.
+A WordPress plugin that shares users and purchases with a hosted LMS. Enrollments and sales arrive over authenticated webhooks, learners cross into WordPress through signed single-use links, and membership checks are answered locally rather than by calling the platform.
+
+What it demonstrates:
+
+- **The parts that decide whether an integration survives production.** Staged webhook authentication, so a live feed can be secured without rejecting one delivery. Idempotent handlers, because webhook platforms re-deliver and the same event twice has to converge rather than duplicate. Unknown events acknowledged, because a 4xx makes the platform retry something this site will never understand.
+- **A threat model written next to the code that answers it.** The signature covers the redirect target, tokens are single-use with a five minute life, and single sign-on refuses to authenticate any account that can edit or administer, so a leaked secret is worth a subscriber session and nothing more.
+- **The risk the code cannot close, stated instead of faked.** An earlier mitigation was removed because it cost real learners access on mobile networks while barely inconveniencing an attacker.
+- **A rollout runbook, and a dashboard built around silence.** The failure mode of this kind of integration is that deliveries stop and nobody notices until a customer cannot open what they paid for.
+- **67 tests** over a WordPress stub and real SQL, with no PHPUnit and no external dependencies.
+
+Its [DECISIONS.md](https://github.com/Furnari-Marco/lms-wordpress-bridge/blob/main/DECISIONS.md) covers twenty of these trade-offs, including two that came from bugs found in production.
 
 ---
 
