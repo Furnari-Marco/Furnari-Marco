@@ -12,7 +12,7 @@ I've been on both sides of that seam. I've built the integrations, and I've been
 
 - **Integrate platforms that don't share identity or data.** Webhooks, REST APIs, signed single sign-on, idempotent syncs, and the reconciliation you need for when a webhook silently doesn't arrive.
 - **Work in WordPress at the level that matters.** Custom plugins, the REST API, `$wpdb`, cron, capabilities, and the security review that should come with all of it.
-- **Automate what people are doing by hand.** Crawling, parsing, extraction, reporting. Usually in Python, and usually because someone was copying numbers into a spreadsheet every Monday.
+- **Automate what people are doing by hand.** Crawling, parsing, extraction, reporting, usually because someone was copying numbers into a spreadsheet every Monday.
 - **Translate between engineering and the business.** Scoping what should *not* be built is the part of the job I'm best at, and the part clients thank me for a year later.
 
 ---
@@ -61,13 +61,15 @@ Its [DECISIONS.md](https://github.com/Furnari-Marco/lms-wordpress-bridge/blob/ma
 
 ## Toolbox
 
-`PHP` · `JavaScript` · `Python` · `Node.js` · `React` · `Next.js` · `WordPress` · `MySQL` · `REST APIs` · `Webhooks` · `SSO` · `Playwright` · `Linux` · `Nginx` · `Git`
+`WordPress` · `HTML` · `CSS` · `REST APIs` · `Webhooks` · `SSO` · `Technical SEO` · `Google Tag Manager` · `GA4` · `Hotjar` · `Marketing automation` · `Linux` · `DNS`
 
 ---
 
 ## How I work
 
 I don't consider something finished because it runs on my machine. Everything I own has a verification routine that runs before delivery. I would rather find the failure myself than have a client find it on a Monday morning. I write things down, including what was tried and rejected and why, because the next person to touch the code is usually me, a year later, having forgotten all of it.
+
+I build with AI assistants. I set the architecture, the requirements and the constraints, direct the implementation, and verify every piece before it ships. The code in these repositories was written that way; the design decisions are mine, and each repository explains them in its DECISIONS.md.
 
 Currently open to **Senior Solutions Engineer** and **Technical Account Manager** roles, remote across EMEA.
 
