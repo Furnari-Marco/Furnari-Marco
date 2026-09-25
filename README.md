@@ -68,7 +68,7 @@ Its [DECISIONS.md](https://github.com/Furnari-Marco/lms-wordpress-bridge/blob/ma
 
 **Tracking and SEO:** `Google Tag Manager` · `GA4` · `Hotjar` · `Technical SEO`
 
-**Infrastructure:** `Linux` · `DNS` · `Hosting`
+**Infrastructure:** `Linux` · `DNS` · `Hosting` · `Email deliverability (SPF, DKIM, DMARC)`
 
 ---
 
