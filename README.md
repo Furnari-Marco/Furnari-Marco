@@ -12,7 +12,7 @@ I've been on both sides of that seam. I've built the integrations, and I've been
 
 - **Integrate platforms that don't share identity or data.** Webhooks, REST APIs, signed single sign-on, idempotent syncs, and the reconciliation you need for when a webhook silently doesn't arrive.
 - **Work in WordPress at the level that matters.** Custom plugins, the REST API, `$wpdb`, cron, capabilities, and the security review that should come with all of it.
-- **Run marketing automation end to end.** Email platforms (Kit, Brevo, Mailchimp), the workflows in n8n and Zapier that connect them to everything else, and the tracking that tells you whether any of it works.
+- **Know where no-code stops.** Email platforms (Kit, Brevo, Mailchimp) and the n8n and Zapier workflows that connect them cover most of the job. When identity, payments or data that has to stay consistent are involved, they usually don't, and that's where I design the integration and build it instead.
 - **Automate what people are doing by hand.** Crawling, parsing, extraction, reporting, usually because someone was copying numbers into a spreadsheet every Monday.
 - **Translate between engineering and the business.** Scoping what should *not* be built is the part of the job I'm best at, and the part clients thank me for a year later.
 
