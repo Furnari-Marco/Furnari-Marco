@@ -2,7 +2,7 @@
 
 **I make platforms talk to each other.**
 
-Eleven years in web operations, MarTech and API integrations. Most of it has been spent on the unglamorous seam between systems that were never designed to work together: a hosted LMS and a WordPress site, a CRM and a checkout, a marketing stack and a database that has to stay consistent at the end of the month.
+Eleven years in web operations, MarTech and API integrations. Most of it has been spent on the unglamorous seam between systems that were never designed to work together: a hosted LMS and a WordPress site, an email platform and a checkout, a marketing stack and a database that has to stay consistent at the end of the month.
 
 I've been on both sides of that seam. I've built the integrations, and I've been the customer who had to live with them, running an online school, shipping client sites, and doing the technical SEO work that pays for none of it but breaks all of it. That has shaped how I work more than any framework has.
 
@@ -12,6 +12,7 @@ I've been on both sides of that seam. I've built the integrations, and I've been
 
 - **Integrate platforms that don't share identity or data.** Webhooks, REST APIs, signed single sign-on, idempotent syncs, and the reconciliation you need for when a webhook silently doesn't arrive.
 - **Work in WordPress at the level that matters.** Custom plugins, the REST API, `$wpdb`, cron, capabilities, and the security review that should come with all of it.
+- **Run marketing automation end to end.** Email platforms (Kit, Brevo, Mailchimp), the workflows in n8n and Zapier that connect them to everything else, and the tracking that tells you whether any of it works.
 - **Automate what people are doing by hand.** Crawling, parsing, extraction, reporting, usually because someone was copying numbers into a spreadsheet every Monday.
 - **Translate between engineering and the business.** Scoping what should *not* be built is the part of the job I'm best at, and the part clients thank me for a year later.
 
@@ -61,7 +62,13 @@ Its [DECISIONS.md](https://github.com/Furnari-Marco/lms-wordpress-bridge/blob/ma
 
 ## Toolbox
 
-`WordPress` · `HTML` · `CSS` · `REST APIs` · `Webhooks` · `SSO` · `Technical SEO` · `Google Tag Manager` · `GA4` · `Hotjar` · `Marketing automation` · `Linux` · `DNS`
+**Automation and email:** `n8n` · `Zapier` · `Kit` · `Brevo` · `Mailchimp`
+
+**Web and integration:** `WordPress` · `HTML` · `CSS` · `REST APIs` · `Webhooks` · `SSO` · `Teachable`
+
+**Tracking and SEO:** `Google Tag Manager` · `GA4` · `Hotjar` · `Technical SEO`
+
+**Infrastructure:** `Linux` · `DNS` · `Hosting`
 
 ---
 
@@ -71,10 +78,10 @@ I don't consider something finished because it runs on my machine. Everything I 
 
 I build with AI assistants. I set the architecture, the requirements and the constraints, direct the implementation, and verify every piece before it ships. The code in these repositories was written that way; the design decisions are mine, and each repository explains them in its DECISIONS.md.
 
-Currently open to **Senior Solutions Engineer** and **Technical Account Manager** roles, remote across EMEA.
+Currently open to **Solutions Engineering**, **technical Customer Success** and **marketing automation** roles, remote across EMEA.
 
 ---
 
 ## Get in touch
 
-The best way to reach me is **[LinkedIn](https://www.linkedin.com/in/marco-furnari-635545171/)**. Happy to talk about integration work, WordPress beyond the plugin directory, or anything in the repositories above.
+The best way to reach me is **[LinkedIn](https://www.linkedin.com/in/marco-furnari-635545171/)**. Happy to talk about integration and automation work, WordPress beyond the plugin directory, or anything in the repositories above.
