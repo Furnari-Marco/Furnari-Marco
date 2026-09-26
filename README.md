@@ -58,6 +58,20 @@ What it demonstrates:
 
 Its [DECISIONS.md](https://github.com/Furnari-Marco/lms-wordpress-bridge/blob/main/DECISIONS.md) covers twenty of these trade-offs, including two that came from bugs found in production.
 
+### [n8n-llm-failover-router](https://github.com/Furnari-Marco/n8n-llm-failover-router): a chat endpoint that survives its providers
+
+An n8n workflow that serves a chat from free LLM tiers. When a provider runs out of quota or goes down, the same conversation moves to the next one within the same request, and the exhausted provider is left to rest instead of being retried on every message.
+
+What it demonstrates:
+
+- **A workflow treated like software.** The cascade stays visible in the editor, while the JavaScript lives in plain files that are synced into the export and checked in CI.
+- **Knowing where the platform bites.** An n8n error output carries the error but not the conversation, so a naive cascade stops at the first failure while looking correct on the canvas. Failures are classified from structured fields (quota, outage, rejected key), each with its own cooldown.
+- **A public endpoint that cannot be used to spend someone else's quota.** Rate limits per session and in total, origin checks inside the workflow because CORS alone does not stop a request, no shared default session, and a system prompt the caller cannot replace.
+- **Limits measured, not guessed.** Running it end to end on a real n8n is how I found that n8n writes a workflow's static data after the webhook has already answered. The README documents what that costs and when to move to a Data Table.
+- **36 tests**: 30 on the exported workflow, 6 end to end on n8n 2.40.7 in CI.
+
+Its [DECISIONS.md](https://github.com/Furnari-Marco/n8n-llm-failover-router/blob/main/DECISIONS.md) covers fifteen of these trade-offs.
+
 ---
 
 ## Toolbox
