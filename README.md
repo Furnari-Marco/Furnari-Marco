@@ -35,7 +35,7 @@ Its [DECISIONS.md](https://github.com/Furnari-Marco/schema-driven-cms/blob/main/
 
 ### [seo-audit-core](https://github.com/Furnari-Marco/seo-audit-core): the analysis core of a technical SEO platform
 
-From parsed HTML to findings a client can act on: SEO extraction, technical issue detection, black-hat SEO detection and crawl-over-crawl comparison. Pure Python, with no network, database or framework, extracted from a platform in use on real audits.
+From parsed HTML to findings a client can act on: SEO extraction, technical issue detection, black-hat SEO detection and crawl-over-crawl comparison. Pure Python, with no network, database or framework, extracted from a platform used on its first real client audit.
 
 What it demonstrates:
 
